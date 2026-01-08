@@ -25,7 +25,6 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
           hostname: deploy-hey-xyz-south-${{ github.run_id }}
-          ping: ${{ env.MACHINE }}
           version: latest
 
       - name: Add SSH key
