@@ -42,5 +42,5 @@ jobs:
         run: |
           MACHINE_IP="$(tailscale ip -4 $MACHINE)"
           USERHOST="root@$MACHINE_IP"
-          COMMAND="sleep 5"
+          COMMAND="ls"
           ssh $USERHOST "$COMMAND"

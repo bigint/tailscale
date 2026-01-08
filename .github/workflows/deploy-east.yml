@@ -15,9 +15,6 @@ jobs:
     env:
       MACHINE: hey-xyz
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Connect to Tailscale
         uses: tailscale/github-action@v4
         with:
@@ -45,5 +42,5 @@ jobs:
         run: |
           MACHINE_IP="$(tailscale ip -4 $MACHINE)"
           USERHOST="root@$MACHINE_IP"
-          COMMAND="sleep 5"
+          COMMAND="ls"
           ssh $USERHOST "$COMMAND"
