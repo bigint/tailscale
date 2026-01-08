@@ -13,7 +13,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     env:
-      MACHINE: hey-xyz-north
+      MACHINE: hey-xyz
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,6 +25,7 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
           hostname: deploy-hey-xyz-north-${{ github.run_id }}
+          ping: ${{ env.MACHINE }}
           version: latest
 
       - name: Add SSH key
