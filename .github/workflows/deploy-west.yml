@@ -1,4 +1,4 @@
-name: Deploy East
+name: Deploy West
 
 on:
   schedule:
@@ -13,7 +13,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     env:
-      MACHINE: hey-xyz-east
+      MACHINE: hey-xyz-west
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
-          hostname: deploy-hey-xyz-east-${{ github.run_id }}
+          hostname: deploy-hey-xyz-west-${{ github.run_id }}
           ping: ${{ env.MACHINE }}
           version: latest
 
