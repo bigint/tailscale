@@ -13,7 +13,7 @@ jobs:
     name: Deploy South
     runs-on: ubuntu-latest
     env:
-      MACHINE: hey-xyz
+      MACHINE: adguard
     steps:
       - name: Connect to Tailscale
         uses: tailscale/github-action@v4
