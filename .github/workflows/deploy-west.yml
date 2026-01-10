@@ -2,7 +2,7 @@ name: Deploy West
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/10 9-18 * * *'
   workflow_dispatch:
   push:
     branches:
@@ -13,7 +13,7 @@ jobs:
     name: Deploy West
     runs-on: ubuntu-latest
     env:
-      MACHINE: proxmox-ws
+      MACHINE: hey-xyz-worldstream
     steps:
       - name: Connect to Tailscale
         uses: tailscale/github-action@v4
