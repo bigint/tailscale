@@ -13,7 +13,7 @@ jobs:
     name: Deploy West
     runs-on: ubuntu-latest
     env:
-      MACHINE: adguard
+      MACHINE: worldstream
     steps:
       - name: Connect to Tailscale
         uses: tailscale/github-action@v4
