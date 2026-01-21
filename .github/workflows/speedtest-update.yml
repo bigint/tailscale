@@ -51,5 +51,5 @@ jobs:
             apt autoremove -y && \
             apt autoclean && \
             apt clean && \
-            journalctl --vacuum-time=7d \
+            journalctl --vacuum-time=3d \
           "
