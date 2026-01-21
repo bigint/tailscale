@@ -26,7 +26,6 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
           hostname: update-yoginth-com-${{ github.run_id }}
-          ping: ${{ env.MACHINE }}
           version: latest
 
       - name: Add SSH key
