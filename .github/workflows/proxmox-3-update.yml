@@ -1,6 +1,8 @@
 name: Update proxmox-3
 
 on:
+  schedule:
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -33,8 +35,15 @@ jobs:
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add ~/.ssh/key
 
-      - name: Run apt update and upgrade
+      - name: Update, upgrade, and cleanup
         run: |
           MACHINE_IP="$(tailscale ip -4 $MACHINE)"
           USERHOST="root@$MACHINE_IP"
-          ssh $USERHOST "apt update && apt upgrade -y"
+          ssh $USERHOST "\
+            apt update && \
+            apt upgrade -y && \
+            apt autoremove -y && \
+            apt autoclean && \
+            apt clean && \
+            journalctl --vacuum-time=7d \
+          "
