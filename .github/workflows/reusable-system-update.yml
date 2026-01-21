@@ -1,0 +1,39 @@
+name: Reusable System Update
+
+on:
+  workflow_call:
+    inputs:
+      host:
+        type: string
+        required: true
+        description: 'Target host name for SSH'
+    secrets:
+      TS_OAUTH_CLIENT_ID:
+        required: true
+      TS_OAUTH_SECRET:
+        required: true
+
+jobs:
+  update:
+    name: Update ${{ inputs.host }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: gh-update-${{ inputs.host }}
+          version: latest
+
+      - name: Update, upgrade, and cleanup
+        run: |
+          tailscale ssh root@${{ inputs.host }} "\
+            apt update && \
+            apt upgrade -y && \
+            apt autoremove -y && \
+            apt autoclean && \
+            apt clean && \
+            journalctl --vacuum-time=3d \
+          "

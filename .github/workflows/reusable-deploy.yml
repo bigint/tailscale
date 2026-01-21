@@ -1,0 +1,36 @@
+name: Reusable Deploy
+
+on:
+  workflow_call:
+    inputs:
+      region:
+        type: string
+        required: true
+        description: 'Deployment region (east, north, south, west)'
+      target-host:
+        type: string
+        required: true
+        description: 'Target host name for SSH'
+    secrets:
+      TS_OAUTH_CLIENT_ID:
+        required: true
+      TS_OAUTH_SECRET:
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy ${{ inputs.region }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          hostname: gh-deploy-hey-xyz-${{ inputs.region }}
+          version: latest
+
+      - name: Deploy
+        run: |
+          tailscale ssh root@${{ inputs.target-host }} "ls"
