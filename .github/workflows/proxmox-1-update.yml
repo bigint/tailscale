@@ -1,11 +1,11 @@
-name: Update Proxmox 1
+name: Update proxmox-1
 
 on:
   workflow_dispatch:
 
 jobs:
-  update:
-    name: Update Proxmox 1
+  update-proxmox-1:
+    name: Update proxmox-1
     runs-on: ubuntu-latest
     env:
       MACHINE: proxmox-1
