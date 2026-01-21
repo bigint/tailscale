@@ -14,18 +14,10 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy West
-    runs-on: ubuntu-latest
-    steps:
-      - name: Connect to Tailscale
-        uses: tailscale/github-action@v4
-        with:
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:ci
-          hostname: gh-deploy-hey-xyz-west
-          version: latest
-
-      - name: Deploy
-        run: |
-          tailscale ssh root@worldstream "ls"
+    uses: ./.github/workflows/reusable-deploy.yml
+    with:
+      region: west
+      target-host: worldstream
+    secrets:
+      TS_OAUTH_CLIENT_ID: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+      TS_OAUTH_SECRET: ${{ secrets.TS_OAUTH_SECRET }}
