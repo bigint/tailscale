@@ -1,3 +1,3 @@
 # Tailscale
 
-Tailscale GitHub actions
+Tailscale GitHub Actions
