@@ -19,17 +19,17 @@ jobs:
       matrix:
         host:
           - adguard
+          - uptime
+          - worldstream
+          - jalahalli-pi
           - analytics
           - beszel
           - hey-xyz
-          - jalahalli-pi
           - proxmox-1
           - proxmox-2
           - proxmox-3
           - speedtest
           - tsflow
-          - uptime
-          - worldstream
           - yoginth-com
     uses: ./.github/workflows/reusable-system-update.yml
     with:
