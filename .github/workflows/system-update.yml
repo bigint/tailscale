@@ -28,6 +28,7 @@ jobs:
           - proxmox-1
           - proxmox-2
           - proxmox-3
+          - kerala-pi
           - tsflow
           - yoginth-com
     uses: ./.github/workflows/reusable-system-update.yml
