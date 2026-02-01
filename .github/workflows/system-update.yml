@@ -25,7 +25,6 @@ jobs:
           - kerala-pi
           - analytics
           - beszel
-          - clyde
           - hey-xyz
           - proxmox-1
           - proxmox-2
