@@ -19,7 +19,6 @@ jobs:
       matrix:
         host:
           - adguard
-          - uptime
           - worldstream
           - jalahalli-pi
           - kerala-pi
