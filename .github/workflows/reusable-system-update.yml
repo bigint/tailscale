@@ -32,8 +32,18 @@ jobs:
           tailscale ssh root@${{ inputs.host }} "\
             apt update && \
             apt upgrade -y && \
-            apt autoremove -y && \
+            apt autoremove --purge -y && \
             apt autoclean && \
             apt clean && \
-            journalctl --vacuum-time=3d \
+            journalctl --vacuum-time=3d && \
+            journalctl --vacuum-size=200M && \
+            find /var/log -type f -name '*.gz' -delete; \
+            find /var/log -type f -name '*.old' -delete; \
+            find /var/log -type f -name '*.[0-9]' -delete; \
+            rm -rf /var/crash/*; \
+            find /var/lib/systemd/coredump -type f -delete 2>/dev/null; \
+            find /tmp -type f -atime +7 -delete 2>/dev/null; \
+            find /var/tmp -type f -atime +7 -delete 2>/dev/null; \
+            command -v docker >/dev/null && docker system prune -af --volumes 2>/dev/null; \
+            true \
           "
