@@ -23,7 +23,6 @@ jobs:
           - jalahalli-pi
           - kerala-pi
           - analytics
-          - beszel
           - hey-xyz
           - proxmox-1
           - proxmox-2
