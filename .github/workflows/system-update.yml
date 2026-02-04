@@ -29,6 +29,7 @@ jobs:
           - proxmox-3
           - tsflow
           - yoginth-com
+          - unifi
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
