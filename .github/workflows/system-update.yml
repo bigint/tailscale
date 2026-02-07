@@ -30,6 +30,7 @@ jobs:
           - tsflow
           - yoginth-com
           - unifi
+          - invoiceninja
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
