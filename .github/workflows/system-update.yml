@@ -31,6 +31,8 @@ jobs:
           - yoginth-com
           - unifi
           - invoiceninja
+          - postgres
+          - valkey
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
