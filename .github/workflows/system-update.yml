@@ -33,6 +33,7 @@ jobs:
           - invoiceninja
           - postgres
           - valkey
+          - streamer
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
