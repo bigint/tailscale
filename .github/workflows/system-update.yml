@@ -21,7 +21,7 @@ jobs:
           - adguard
           - worldstream
           - jalahalli-pi
-          - kerala-pi
+          # - kerala-pi
           - proxmox-1
           - proxmox-2
           - proxmox-3
