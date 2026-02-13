@@ -31,6 +31,7 @@ jobs:
           - hey-xyz
           - tsflow
           - yoginth-com
+          - speed
           - unifi
           - invoiceninja
           - postgres
