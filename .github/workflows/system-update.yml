@@ -36,7 +36,9 @@ jobs:
           - invoiceninja
           - postgres
           - valkey
+          - grafana
           - streamer
+          - beszel
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
