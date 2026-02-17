@@ -37,9 +37,9 @@ jobs:
           - postgres
           - valkey
           - grafana
-          - streamer
           - beszel
           - bichon
+          - clyde
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
