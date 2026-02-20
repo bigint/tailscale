@@ -20,24 +20,24 @@ jobs:
         host:
           - adguard
           - worldstream
-          - jalahalli-pi
-          # - kerala-pi
           - proxmox-1
           - proxmox-2
           - proxmox-3
           - proxmox-4
           - proxmox-5
-          - analytics
+          - yoginth-com
           - hey-xyz
           - tsflow
-          - yoginth-com
-          - speed
           - unifi
+          - grafana
+          - analytics
+          - beszel
+          # - gatus
+          - linkding
           - invoiceninja
           - postgres
           - valkey
-          - grafana
-          - beszel
+          - bengaluru
           - bichon
           - clyde
     uses: ./.github/workflows/reusable-system-update.yml
