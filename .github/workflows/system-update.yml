@@ -32,7 +32,6 @@ jobs:
           - grafana
           - analytics
           - beszel
-          - gatus
           - linkding
           - invoiceninja
           - postgres
