@@ -38,7 +38,6 @@ jobs:
           - valkey
           - bengaluru
           - bichon
-          - clyde
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
