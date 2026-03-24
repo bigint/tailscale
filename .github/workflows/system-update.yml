@@ -21,17 +21,14 @@ jobs:
           - adguard
           - worldstream
           - proxmox-1
-          - proxmox-2
-          - proxmox-3
-          - proxmox-4
+          # - proxmox-2
+          # - proxmox-3
+          # - proxmox-4
           - proxmox-5
           - yoginth-com
           - hey-xyz
           - tsflow
-          - unifi
-          - grafana
           - analytics
-          - beszel
           - linkding
           - postgres
           - valkey
