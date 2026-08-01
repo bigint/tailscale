@@ -18,21 +18,12 @@ jobs:
       fail-fast: false
       matrix:
         host:
-          - adguard
-          - worldstream
-          - proxmox-1
-          # - proxmox-2
-          # - proxmox-3
-          # - proxmox-4
-          - proxmox-5
-          - yoginth-com
-          - hey-xyz
+          - jalahalli-pi
+          - proxmox
+          - connector
+          - yoginth
           - tsflow
-          - analytics
-          - linkding
-          - postgres
-          - valkey
-          - bichon
+          - router
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
