@@ -25,7 +25,6 @@ jobs:
           - tsflow
           - router
           - ovh
-          - vaultwarden
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
