@@ -30,8 +30,6 @@ jobs:
       - name: Update, upgrade, and cleanup
         run: |
           tailscale ssh root@${{ inputs.host }} "\
-            apt update && \
-            apt upgrade -y && \
             apt autoremove --purge -y && \
             apt autoclean && \
             apt clean && \
