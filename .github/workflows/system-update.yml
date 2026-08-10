@@ -25,6 +25,7 @@ jobs:
           - tsflow
           - router
           - ovh
+          - diary
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
