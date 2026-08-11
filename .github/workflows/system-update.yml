@@ -26,6 +26,7 @@ jobs:
           - router
           - ovh
           - diary
+          - linkwarden
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
