@@ -19,14 +19,18 @@ jobs:
       matrix:
         host:
           - jalahalli-pi
-          - proxmox
-          - connector
+          - jalahalli-connector
+          - jalahalli-router
+          - worldstream
+          - worldstream-connector
+          - worldstream-router
           - yoginth
           - tsflow
           - router
           - ovh
           - diary
-          - linkwarden
+          - adguard
+          - dawarich
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
