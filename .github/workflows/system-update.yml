@@ -18,7 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         host:
-          - jalahalli-pi
+          - jalahalli
           - jalahalli-connector
           - jalahalli-router
           - worldstream
@@ -26,7 +26,6 @@ jobs:
           - worldstream-router
           - yoginth
           - tsflow
-          - router
           - ovh
           - diary
           - adguard
