@@ -30,6 +30,7 @@ jobs:
           - diary
           - adguard
           - dawarich
+          - umami
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
