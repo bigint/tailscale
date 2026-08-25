@@ -27,9 +27,7 @@ jobs:
           - yoginth
           - tsflow
           - ovh
-          - diary
           - adguard
-          - dawarich
           - umami
     uses: ./.github/workflows/reusable-system-update.yml
     with:
