@@ -30,6 +30,7 @@ jobs:
           - adguard
           - umami
           - hister
+          - journal
           - karakeep
     uses: ./.github/workflows/reusable-system-update.yml
     with:
