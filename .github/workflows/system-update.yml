@@ -25,6 +25,7 @@ jobs:
           - worldstream-connector
           - worldstream-router
           - yoginth
+          - nailbykyro
           - tsflow
           - ovh
           - adguard
