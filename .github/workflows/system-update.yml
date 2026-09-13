@@ -20,12 +20,8 @@ jobs:
         host:
           - jalahalli
           - jalahalli-connector
-          - jalahalli-router
           - worldstream
           - worldstream-connector
-          - worldstream-router
-          - yoginth
-          - nailbykyro
           - tsflow
           - ovh
           - adguard
