@@ -18,17 +18,15 @@ jobs:
       fail-fast: false
       matrix:
         host:
-          - jalahalli
-          - jalahalli-connector
           - worldstream
-          - worldstream-connector
+          - connector
           - tsflow
           - ovh
           - adguard
           - umami
           - hister
-          - journal
-          - karakeep
+          - bichon
+          - router
     uses: ./.github/workflows/reusable-system-update.yml
     with:
       host: ${{ matrix.host }}
