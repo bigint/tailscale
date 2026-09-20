@@ -24,7 +24,6 @@ jobs:
           - ovh
           - adguard
           - umami
-          - hister
           - bichon
           - router
     uses: ./.github/workflows/reusable-system-update.yml
