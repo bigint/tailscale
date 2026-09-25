@@ -21,7 +21,6 @@ jobs:
           - worldstream
           - connector
           - tsflow
-          - ovh
           - adguard
           - umami
           - bichon
