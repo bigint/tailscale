@@ -1,0 +1,26 @@
+name: Migrate updater credentials
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install sealed-box support
+        run: python3 -m pip install --disable-pip-version-check PyNaCl==1.5.0
+      - name: Encrypt for the homelab repository
+        env:
+          TS_OAUTH_CLIENT_ID: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          TS_OAUTH_SECRET: ${{ secrets.TS_OAUTH_SECRET }}
+          DESTINATION_PUBLIC_KEY: eAwhMFax2t3VhmzR00ZdH/LJEb7YwzsLfOyKkKihKx8=
+        run: |
+          python3 - <<'PYTHON'
+          import base64, os
+          from nacl.public import PublicKey, SealedBox
+          box = SealedBox(PublicKey(base64.b64decode(os.environ['DESTINATION_PUBLIC_KEY'])))
+          for name in ['TS_OAUTH_CLIENT_ID', 'TS_OAUTH_SECRET']:
+              value = os.environ[name]
+              if not value:
+                  raise SystemExit(f'Missing source credential: {name}')
+              print('MIGRATED_' + name + '=' + base64.b64encode(box.encrypt(value.encode())).decode())
+          PYTHON
